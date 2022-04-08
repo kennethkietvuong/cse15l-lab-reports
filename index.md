@@ -2,7 +2,7 @@
 
 ## This is a small header
 
-A **summary** is a *summary* of a summary within a summary of that summary of this summary.
+A **summary** is a *summary* of a summary within a summary of that summary.
 
 * Bruh
 * Moment
@@ -17,6 +17,8 @@ Here is link to [bruhmoment.md](https://kennethkietvuong.github.io/cse15l-lab-re
 1. one
 2. two
 3. three?
+
+*insert edit here*  
 
 ---
 
