@@ -10,8 +10,7 @@ A **summary** is a *summary* of a summary within a summary of that summary of th
 
 Here is link to [bruhmoment.md](https://kennethkietvuong.github.io/cse15l-lab-reports/bruhmoment.md)
 
-Here is image:
-![Image](https://tenor.com/bNsL7.gif)
+![Image](https://i.redd.it/918mym3nsjf31.jpg)
 
 > Block quotes!
 
