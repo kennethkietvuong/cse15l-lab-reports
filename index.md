@@ -1,1 +1,30 @@
-ahaha
+# This is a big header
+
+## This is a small header
+
+A **summary** is a *summary* of a summary within a summary of that summary of this summary.
+
+* Bruh
+* Moment
+* No?
+
+Here is link to [bruhmoment.md](https://kennethkietvuong.github.io/cse15l-lab-reports/bruhmoment.md)
+
+Here is image:
+![Image](https://tenor.com/bNsL7.gif)
+
+> Block quotes!
+
+1. one
+2. two
+3. three?
+
+---
+
+`eh?`
+
+```
+A code block is interesting.
+
+It is very versatile to use to place code for visability.
+```
