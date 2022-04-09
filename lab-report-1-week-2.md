@@ -52,4 +52,4 @@ This is where it gets real cool but may be quite confusing. We're going to be **
             * When it prompts before connecting, type **yes** and enter.
                 * Afterwards, it will prompt you to enter your password, so **enter the password** you took from your *course-specific account* (your password won't display on the terminal, but it's there).
         * Once you've entered your password, you should be remotely connected to the ieng6 server!
-        ![Image](connectingtoserver.png)
+        ![Image](lab-report-1-images\connectingtoserver.png)
