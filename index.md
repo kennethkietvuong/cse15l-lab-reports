@@ -29,3 +29,10 @@ A code block is interesting.
 
 It is very versatile to use to place code for visability.
 ```
+---
+
+
+# Lab Reports
+[Lab Report test](lab-report-1-week-2.html)
+
+[Lab Report 1](https://kennethkietvuong.github.io/cse15l-lab-reports/lab-report-1-week-2.html)
