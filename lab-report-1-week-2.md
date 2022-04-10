@@ -96,7 +96,9 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 ## Moving Files over SSH with scp
 * So, we know a few commands to run through the terminal to go back & forth, copy, and read files. Now let's go to the next level and transfer files from your computer to the server computer.
 
-* We are going to be using the `scp` command to make this magic work. SCP stands for Secure Copy Protocol, and basically it's another way to copy files (but between networks). We *always* run this command through the client (your computer):
+* We are going to be using the `scp` command to make this magic work. SCP stands for Secure Copy Protocol, and basically it's another way to copy files (but between networks). We *always* run this command through the client (your computer).
+
+### Step 1 - Creating a file to transfer
     1. On your computer (*not accessing the server computer*), create a file called **WhereAmI.java** & then put this piece of code into the file:
         ```java
         class WhereAmI {
@@ -113,11 +115,12 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 
         > java WhereAmI
         * Keep in mind what this file does! It should print your system's properties or info about it.
-    3. Now that we have the file on your computer, let's use the `scp` command to transfer the file to the server computer:
+### Step 2 - Transfering the file
+    1. Now that we have the file on your computer, let's use the `scp` command to transfer the file to the server computer:
         > scp WhereAmI.java username@ieng6.ucsd.edu:~/
         * It should prompt you to enter your password just like logging in with `ssh`, so enter your password.
-    4. Once it has done its *magic*, log back into the ieng6 server computer using `ssh` like the usual, and use the `ls` command. You should see that the **WhereAmI.java** file is right in your home directory!
-    5. You're able to use the `javac` & `java` commands to run the file, as the server has java installed! Try running those two commands to see what you get.
+    2. Once it has done its *magic*, log back into the ieng6 server computer using `ssh` like the usual, and use the `ls` command. You should see that the **WhereAmI.java** file is right in your home directory!
+    3. You're able to use the `javac` & `java` commands to run the file, as the server has java installed! Try running those two commands to see what you get.
         * You probably should get the properties of the server computer that you are accessing!
     ![Image](/lab-report-1-images/scptransferfile.png)
 
