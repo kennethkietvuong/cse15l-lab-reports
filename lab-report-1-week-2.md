@@ -130,5 +130,31 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 <p>&nbsp;</p>
 
 ## SSH Keys
-* Remotely connecting to the ieng6 server usually takes typing the `ssh` command and entering your password. Going back and forth may become tedious, so let's make it more convient to log into the server!
-* We are going to generating **SSH keys** to make that more convenient, where it makes a pair of a *public & private key* as a way to automatically access the server computer **without entering your password**.
+* Remotely connecting to the ieng6 server usually takes typing the `ssh` command and entering your password. Going back and forth may become tedious, so let's make it more convenient & save times to log into the server!
+* We are going to be generating **SSH keys** to make that more convenient, where it makes a pair of a *public & private key* as a way to automatically access the server computer **without entering your password**.
+
+### Part 1 - Generating the SSH Key Pair
+1. On your **client** (your computer), run the `ssh-keygen` command in your terminal.
+    * It should prompt afterwards (after generating):
+        > Generating public/private rsa key pair.
+        
+        > Enter file in which to save the key (/Users/*username*/.ssh/id_rsa):
+2. Once it prompts to enter a file, enter:
+    > (/Users/*username*/.ssh/id_rsa): /Users/*username*/.ssh/id_rsa
+3. Once it prompts for a *passphrase*, **don't enter one**. Just hit enter.
+    * It'll ask to enter the same passphrase again. Hit enter again.
+4. You'll see that it has saved the identification and public key to a specific directory. Also you should see the *key fingerprint* & the *key's randomart image*.
+    
+    ![Image](/lab-report-1-images/randomart.png) (randomart image)
+
+### Part 2 - Copying Public Key to Your Account on the Server
+* Now that we have two keys (public and private), we'll need copy the public key to the `.ssh` directory of your account in the server.
+    1. Log back into the server using `ssh` as usual
+    2. Once you're in the server, we'll be using the `mkdir` command to make a new & empty directory to make a *.ssh* directory in the server:
+        > mkdir .ssh
+    3. `Exit` out of the server back onto your client, then use this `scp` command:
+        > scp /Users/*username*/.ssh/id_rsa.pub *username*@ieng6.ucsd.edu:~/.ssh/authorized_keys
+        * We're copying the key over the server, so the server recognizes that our client has *matching* keys (so it automatically knows to log in)
+    * At this point, you are done! Any command such as `ssh` or ``scp`` that requires you to enter your password will not require you to enter your password (as it will do it automatically).
+
+    ![Image](/lab-report-1-images/connect_without_password.png)
