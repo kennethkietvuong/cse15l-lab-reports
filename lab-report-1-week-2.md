@@ -163,19 +163,20 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 
     ![Image](/lab-report-1-images/connect_without_password.png)
 
-    ## Optimizing Remote Running
-    * Once you've reached this point, it's all about optimizing. Making things more convenient, ease of access, or just saving time by a ton. It isn't necessary, but it'll make things a little more *pleasant*.
-    * Here are a few things that I found are pretty cool to make it easier between the client and the server computer:
-        * Writing commands in **quotes**:
-            * At the end of `ssh` commands, you can run specific commands directly on the remote server then exit.
-                > ssh *username*@ieng6.ucsd.edu **"ls"**
+## Optimizing Remote Running
+
+* Once you've reached this point, it's all about optimizing. Making things more convenient, ease of access, or just saving time by a ton. It isn't necessary, but it'll make things a little more *pleasant*.
+* Here are a few things that I found are pretty cool to make it easier between the client and the server computer:
+    * Writing commands in **quotes**:
+        * At the end of `ssh` commands, you can run specific commands directly on the remote server then exit.
+            > ssh *username*@ieng6.ucsd.edu **"ls"**
             
-            ![Image](/lab-report-1-images/quoteshortcut.png)
-        * Using **semicolons** to run multiple commands in the same line:
-            > cp WhereAmI.java OtherMain.java; javac OtherMain.java; java OtherMain
-        * Using the up-arrow (on your keyboard) to see the command you previously ran
-        * The most coolest of all...getting extensions through VSCode to access the server computer remotely.
-            * There's an extension in VSCode called **Remote - SSH**, and with a bit of manual labor to figure things out, you're able to access the server computer files that you want to edit.
-                * ex. Editting WhereAmI.java in the server computer instead of your client computer...and then using the `scp` command.
+        ![Image](/lab-report-1-images/quoteshortcut.png)
+    * Using **semicolons** to run multiple commands in the same line:
+        > cp WhereAmI.java OtherMain.java; javac OtherMain.java; java OtherMain
+    * Using the up-arrow (on your keyboard) to see the command you previously ran
+    * The most coolest of all...getting extensions through VSCode to access the server computer remotely.
+        * There's an extension in VSCode called **Remote - SSH**, and with a bit of manual labor to figure things out, you're able to access the server computer files that you want to edit.
+            * ex. Editting WhereAmI.java in the server computer instead of your client computer...and then using the `scp` command.
             
-            ![Image](/lab-report-1-images/remotessh_extension.png)
+![Image](/lab-report-1-images/remotessh_extension.png)
