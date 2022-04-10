@@ -114,7 +114,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         > javac WhereAmI.java
 
         > java WhereAmI
-        * Keep in mind what this file does! It should print your system's properties or info about it.
+    * Keep in mind what this file does! It should print your system's properties or info about it.
 ### Step 2 - Transfering the file
     1. Now that we have the file on your computer, let's use the `scp` command to transfer the file to the server computer:
         > scp WhereAmI.java username@ieng6.ucsd.edu:~/
