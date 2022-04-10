@@ -110,10 +110,10 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         }
     }
     ```
-    2. Save the file, then in your terminal, run the `javac` & `java` commands for that file (*you can skip this if you don't have java installed*):
-        > javac WhereAmI.java
+2. Save the file, then in your terminal, run the `javac` & `java` commands for that file (*you can skip this if you don't have java installed*):
+    > javac WhereAmI.java
 
-        > java WhereAmI
+    > java WhereAmI
     
     * Keep in mind what this file does! It should print your system's properties or info about it.
 
