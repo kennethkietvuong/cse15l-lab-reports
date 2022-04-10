@@ -46,18 +46,21 @@ This is where it gets real cool but may be quite confusing. We're going to be **
     2. Within the terminal, type: 
     >**ssh username@ieng6.ucsd.edu**
     3. (Optional) If in the case this is your first-time (which it probably is), you will probably get a message that denotes:
-        * Authenticity of host "ieng6.ucsd.edu (IP)" can't be established.
-        * RSA key fingerprint is: ~~~
-        * *Are you sure you want to continue connecting?*
-            * When it prompts before connecting, type **yes** and enter.
-                * Afterwards, it will prompt you to enter your password, so **enter the password** you took from your *course-specific account* (your password won't display on the terminal, but it's there).
+        > Authenticity of host "ieng6.ucsd.edu (IP)" can't be established.
+        
+        > RSA key fingerprint is: ~~~
+
+        > Are you sure you want to continue connecting?
+
+        * When it prompts before connecting, type **yes** and enter.
+            * Afterwards, it will prompt you to enter your password, so **enter the password** you took from your *course-specific account* (your password won't display on the terminal, but it's there).
         * Once you've entered your password, you should be remotely connected to the ieng6 server!
 
         ![Image](lab-report-1-images\connectingtoserver.png)
 
 <p>&nbsp;</p>
 
-## Running Some Commands on the Remote Computer
+## Run Commands on the Remote Computer
 * Now that we're able to access the server computer remotely through our computer (and specific account), let's try some commands that will be useful (both on your computer and the server computer).
 
 * Try to run commands in the terminal like *cd, ls, pwd, mkdir, cp*. Think about what it does. While it may seem it did nothing or did *something*, here are a few commands and what they mean:
