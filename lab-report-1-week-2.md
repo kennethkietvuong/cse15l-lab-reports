@@ -45,8 +45,6 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         ![Image](/lab-report-1-images/terminalempty.png)
     2. Within the terminal, type: 
     >**ssh username@ieng6.ucsd.edu**
-        
-    * *The username is your course-specific username!*
     3. (Optional) If in the case this is your first-time (which it probably is), you will probably get a message that denotes:
         * Authenticity of host "ieng6.ucsd.edu (IP)" can't be established.
         * RSA key fingerprint is: ~~~
@@ -90,8 +88,41 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         * Copy files & directories
     * ## **cat**
         * Print content out of a file. Think of it like reading from a text file without opening the text file.
+    * ## **exit**
+        * Exit remotely from the server computer back to your own computer.
 
 <p>&nbsp;</p>
 
-## Moving Files over SSH
-* insert text here
+## Moving Files over SSH with scp
+* So, we know a few commands to run through the terminal to go back & forth, copy, and read files. Now let's go to the next level and transfer files from your computer to the server computer.
+
+* We are going to be using the `scp` command to make this magic work. SCP stands for Secure Copy Protocol, and basically it's another way to copy files (but between networks). We *always* run this command through the client (your computer):
+    1. On your computer (*not accessing the server computer*), create a file called **WhereAmI.java** & then put this piece of code into the file:
+        ```java
+        class WhereAmI {
+            public static void main(String[] args) {
+                System.out.println(System.getProperty("os.name"));
+                System.out.println(System.getProperty("user.name"));
+                System.out.println(System.getProperty("user.home"));
+                System.out.println(System.getProperty("user.dir"));
+            }
+        }
+        ```
+    2. Save the file, then in your terminal, run the `javac` & `java` commands for that file (*you can skip this if you don't have java installed*):
+        > javac WhereAmI.java
+
+        > java WhereAmI
+        * Keep in mind what this file does! It should print your system's properties or info about it.
+    3. Now that we have the file on your computer, let's use the `scp` command to transfer the file to the server computer:
+        > scp WhereAmI.java username@ieng6.ucsd.edu:~/
+        * It should prompt you to enter your password just like logging in with `ssh`, so enter your password.
+    4. Once it has done its *magic*, log back into the ieng6 server computer using `ssh` like the usual, and use the `ls` command. You should see that the **WhereAmI.java** file is right in your home directory!
+    5. You're able to use the `javac` & `java` commands to run the file, as the server has java installed! Try running those two commands to see what you get.
+        * You probably should get the properties of the server computer that you are accessing!
+    ![Image](/lab-report-1-images/scptransferfile.png)
+
+<p>&nbsp;</p>
+
+## SSH Keys
+* Remotely connecting to the ieng6 server usually takes typing the `ssh` command and entering your password. Going back and forth may become tedious, so let's make it more convient to log into the server!
+* We are going to generating **SSH keys** to make that more convenient, where it makes a pair of a *public & private key* as a way to automatically access the server computer **without entering your password**.
