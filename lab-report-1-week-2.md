@@ -145,7 +145,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
     * It'll ask to enter the same passphrase again. Hit enter again.
 4. You'll see that it has saved the identification and public key to a specific directory. Also you should see the *key fingerprint* & the *key's randomart image* (pretty neat!).
     
-    ![Image](/lab-report-1-images/randomart.png) (randomart image)
+    ![Image](/lab-report-1-images/ssh-keygen.png)
 
 ### Part 2 - Copying Public Key to Your Account on the Server
 * Now that we have two keys (public and private), we'll need copy the public key to the `.ssh` directory of your account in the server.
@@ -166,9 +166,13 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         * Writing commands in **quotes**:
             * At the end of `ssh` commands, you can run specific commands directly on the remote server then exit.
                 > ssh *username*@ieng6.ucsd.edu **"ls"**
+            
+            ![Image](/lab-report-1-images/quoteshortcut.png)
         * Using **semicolons** to run multiple commands in the same line:
             > cp WhereAmI.java OtherMain.java; javac OtherMain.java; java OtherMain
         * Using the up-arrow (on your keyboard) to see the command you previously ran
         * The most coolest of all...getting extensions through VSCode to access the server computer remotely.
             * There's an extension in VSCode called **Remote - SSH**, and with a bit of manual labor to figure things out, you're able to access the server computer files that you want to edit.
                 * ex. Editting WhereAmI.java in the server computer instead of your client computer...and then using the `scp` command.
+            
+            ![Image](/lab-report-1-images/remotessh_extension.png)
