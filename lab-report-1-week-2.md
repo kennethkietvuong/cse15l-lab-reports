@@ -143,7 +143,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
     > (/Users/*username*/.ssh/id_rsa): /Users/*username*/.ssh/id_rsa
 3. Once it prompts for a *passphrase*, **don't enter one**. Just hit enter.
     * It'll ask to enter the same passphrase again. Hit enter again.
-4. You'll see that it has saved the identification and public key to a specific directory. Also you should see the *key fingerprint* & the *key's randomart image*.
+4. You'll see that it has saved the identification and public key to a specific directory. Also you should see the *key fingerprint* & the *key's randomart image* (pretty neat!).
     
     ![Image](/lab-report-1-images/randomart.png) (randomart image)
 
@@ -155,6 +155,20 @@ This is where it gets real cool but may be quite confusing. We're going to be **
     3. `Exit` out of the server back onto your client, then use this `scp` command:
         > scp /Users/*username*/.ssh/id_rsa.pub *username*@ieng6.ucsd.edu:~/.ssh/authorized_keys
         * We're copying the key over the server, so the server recognizes that our client has *matching* keys (so it automatically knows to log in)
-    * At this point, you are done! Any command such as `ssh` or ``scp`` that requires you to enter your password will not require you to enter your password (as it will do it automatically).
+    
+    * You are done! Any command such as `ssh` or ``scp`` that requires you to enter your password will not require you to enter your password (as it will do it automatically).
 
     ![Image](/lab-report-1-images/connect_without_password.png)
+
+    ## Optimizing Remote Running
+    * Once you've reached this point, it's all about optimizing. Making things more convenient, ease of access, or just saving time by a ton. It isn't necessary, but it'll make things a little more *pleasant*.
+    * Here are a few things that I found are pretty cool to make it easier between the client and the server computer:
+        * Writing commands in **quotes**:
+            * At the end of `ssh` commands, you can run specific commands directly on the remote server then exit.
+                > ssh *username*@ieng6.ucsd.edu **"ls"**
+        * Using **semicolons** to run multiple commands in the same line:
+            > cp WhereAmI.java OtherMain.java; javac OtherMain.java; java OtherMain
+        * Using the up-arrow (on your keyboard) to see the command you previously ran
+        * The most coolest of all...getting extensions through VSCode to access the server computer remotely.
+            * There's an extension in VSCode called **Remote - SSH**, and with a bit of manual labor to figure things out, you're able to access the server computer files that you want to edit.
+                * ex. Editting WhereAmI.java in the server computer instead of your client computer...and then using the `scp` command.
