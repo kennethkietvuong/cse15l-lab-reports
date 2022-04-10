@@ -18,14 +18,14 @@ Before everything happens, let's start off with getting a text editor to code. T
 ## Connecting to a Remote Server
 This is where it gets real cool but may be quite confusing. We're going to be **remotely connecting to a server and accessing it as a different device** (but only through a terminal). We're going to be using *SSH* (Secure Shell Protocol). Think of it like accessing & remotely connecting to a server like *cloud gaming*.
 
-### Step 1 - Preinstallation
+### Part 1 - Preinstallation
 * Before we connect remotely to a server, we need to make sure we have [**OpenSSH**](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) installed on our computer. Make sure you have the two installed:
     * **OpenSSH Client**
     * **OpenSSH Server**
 
 ![Image](/lab-report-1-images/preinstallationssh.png)
 
-### Step 2 - Finding your course-specific account
+### Part 2 - Finding your course-specific account
 * Once you have installed OpenSSH, we first need to know what your [**course-specific account**](https://sdacs.ucsd.edu/~icc/index.php) is for 15L.
     * Go to the link above and lookup your account with your *UCSD username* (without the @ucsd.edu) and *student ID*.
     ![Image](/lab-report-1-images/findingaccount1.png)
@@ -37,7 +37,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         * Once you've changed your password, wait for about 10 - 45 minutes for the system to change the password, and you're good to go!
 * *Write down your account username and password somewhere for convenience!*
 
-### Step 3 - Connecting to the Remote Server Computer
+### Part 3 - Connecting to the Remote Server Computer
 * We're going to be connecting to one of UCSD's server computers through VSCode (ieng6).
     1. Open VSCode and open a new terminal (there's a tab up top called *Terminal*, press *New Terminal*)
         * You should now see a terminal pop-up of your operating system's main command-line (in my case, it's windows powershell)
@@ -98,30 +98,33 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 
 * We are going to be using the `scp` command to make this magic work. SCP stands for Secure Copy Protocol, and basically it's another way to copy files (but between networks). We *always* run this command through the client (your computer).
 
-### Step 1 - Creating a file to transfer
-    1. On your computer (*not accessing the server computer*), create a file called **WhereAmI.java** & then put this piece of code into the file:
-        ```java
-        class WhereAmI {
-            public static void main(String[] args) {
-                System.out.println(System.getProperty("os.name"));
-                System.out.println(System.getProperty("user.name"));
-                System.out.println(System.getProperty("user.home"));
-                System.out.println(System.getProperty("user.dir"));
-            }
+### Part 1 - Creating a file to transfer
+1. On your computer (*not accessing the server computer*), create a file called **WhereAmI.java** & then put this piece of code into the file:
+    ```java
+    class WhereAmI {
+        public static void main(String[] args) {
+            System.out.println(System.getProperty("os.name"));
+            System.out.println(System.getProperty("user.name"));
+            System.out.println(System.getProperty("user.home"));
+            System.out.println(System.getProperty("user.dir"));
         }
-        ```
+    }
+    ```
     2. Save the file, then in your terminal, run the `javac` & `java` commands for that file (*you can skip this if you don't have java installed*):
         > javac WhereAmI.java
 
         > java WhereAmI
+    
     * Keep in mind what this file does! It should print your system's properties or info about it.
-### Step 2 - Transfering the file
-    1. Now that we have the file on your computer, let's use the `scp` command to transfer the file to the server computer:
-        > scp WhereAmI.java username@ieng6.ucsd.edu:~/
-        * It should prompt you to enter your password just like logging in with `ssh`, so enter your password.
-    2. Once it has done its *magic*, log back into the ieng6 server computer using `ssh` like the usual, and use the `ls` command. You should see that the **WhereAmI.java** file is right in your home directory!
-    3. You're able to use the `javac` & `java` commands to run the file, as the server has java installed! Try running those two commands to see what you get.
-        * You probably should get the properties of the server computer that you are accessing!
+
+### Part 2 - Transfering the file
+1. Now that we have the file on your computer, let's use the `scp` command to transfer the file to the server computer:
+     > scp WhereAmI.java username@ieng6.ucsd.edu:~/
+      * It should prompt you to enter your password just like logging in with `ssh`, so enter your password.
+2. Once it has done its *magic*, log back into the ieng6 server computer using `ssh` like the usual, and use the `ls` command. You should see that the **WhereAmI.java** file is right in your home directory!
+3. You're able to use the `javac` & `java` commands to run the file, as the server has java installed! Try running those two commands to see what you get.
+    * You probably should get the properties of the server computer that you are accessing!
+    
     ![Image](/lab-report-1-images/scptransferfile.png)
 
 <p>&nbsp;</p>
