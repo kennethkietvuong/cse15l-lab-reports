@@ -163,6 +163,8 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 
     ![Image](/lab-report-1-images/connect_without_password.png)
 
+<p>&nbsp;</p>
+
 ## Optimizing Remote Running
 
 * Once you've reached this point, it's all about optimizing. Making things more convenient, ease of access, or just saving time by a ton. It isn't necessary, but it'll make things a little more *pleasant*.
