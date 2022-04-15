@@ -44,13 +44,13 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 
         ![Image](/lab-report-1-images/terminalempty.png)
     2. Within the terminal, type: 
-    >**ssh username@ieng6.ucsd.edu**
+    > `ssh username@ieng6.ucsd.edu`
     3. (Optional) If in the case this is your first-time (which it probably is), you will probably get a message that denotes:
-        > Authenticity of host "ieng6.ucsd.edu (IP)" can't be established.
-        
-        > RSA key fingerprint is: ~~~
-
-        > Are you sure you want to continue connecting?
+        ```
+        Authenticity of host "ieng6.ucsd.edu (IP)" can't be established.
+        RSA key fingerprint is: ~~~
+        Are you sure you want to continue connecting?
+        ```
 
         * When it prompts before connecting, type **yes** and enter.
             * Afterwards, it will prompt you to enter your password, so **enter the password** you took from your *course-specific account* (your password won't display on the terminal, but it's there).
@@ -68,21 +68,21 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         * Changes directory (or path). Think of it like where your files are located.
             * ex. /home/linux/ieng6/cs15lsp22/cs15lsp22ajl
             * ex. /This_PC/Desktop/CSE_15L/randomfolder
-        * cd <*folder*>
+        * `cd <*directory*>`
             * Goes into a specific directory
-        * cd ~
+        * `cd ~`
             * Goes back to home/root directory of your account
-        * cd ..
+        * `cd ..`
             * Goes back a directory
     * ## **ls**
         * List files at that specific directory. Think of it as listing all the files of a programming assignment for a CS class.
-        * ls -lat
+        * `ls -lat`
             * Combination of:
-                * ls -l
+                * `ls -l`
                     * List files within a specific format
-                * ls -a
+                * `ls -a`
                     * List *all* files (including hidden files)
-                * ls -t
+                * `ls -t`
                     * List files by recent date modified
         
         ![Image](/lab-report-1-images/runninglistcommand.png)
@@ -114,15 +114,15 @@ This is where it gets real cool but may be quite confusing. We're going to be **
     }
     ```
 2. Save the file, then in your terminal, run the `javac` & `java` commands for that file (*you can skip this if you don't have java installed*):
-    > javac WhereAmI.java
+    > `javac WhereAmI.java`
 
-    > java WhereAmI
+    > `java WhereAmI`
     
     * Keep in mind what this file does! It should print your system's properties or info about it.
 
 ### Part 2 - Transfering the file
 1. Now that we have the file on your computer, let's use the `scp` command to transfer the file to the server computer:
-     > scp WhereAmI.java username@ieng6.ucsd.edu:~/
+     > `scp WhereAmI.java username@ieng6.ucsd.edu:~/`
       * It should prompt you to enter your password just like logging in with `ssh`, so enter your password.
 2. Once it has done its *magic*, log back into the ieng6 server computer using `ssh` like the usual, and use the `ls` command. You should see that the **WhereAmI.java** file is right in your home directory!
 3. You're able to use the `javac` & `java` commands to run the file, as the server has java installed! Try running those two commands to see what you get.
@@ -139,11 +139,13 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 ### Part 1 - Generating the SSH Key Pair
 1. On your **client** (your computer), run the `ssh-keygen` command in your terminal.
     * It should prompt afterwards (after generating):
-        > Generating public/private rsa key pair.
-        
-        > Enter file in which to save the key (/Users/*username*/.ssh/id_rsa):
+        ```
+        Generating public/private rsa key pair.
+        Enter file in which to save the key (/Users/<username>/.ssh/id_rsa):
+        ```
+
 2. Once it prompts to enter a file, enter:
-    > (/Users/*username*/.ssh/id_rsa): /Users/*username*/.ssh/id_rsa
+    > (/Users/\<username>/.ssh/id_rsa): `/Users/<username>/.ssh/id_rsa`
 3. Once it prompts for a *passphrase*, **don't enter one**. Just hit enter.
     * It'll ask to enter the same passphrase again. Hit enter again.
 4. You'll see that it has saved the identification and public key to a specific directory. Also you should see the *key fingerprint* & the *key's randomart image* (pretty neat!).
@@ -154,9 +156,9 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 * Now that we have two keys (public and private), we'll need copy the public key to the `.ssh` directory of your account in the server.
     1. Log back into the server using `ssh` as usual
     2. Once you're in the server, we'll be using the `mkdir` command to make a new & empty directory to make a *.ssh* directory in the server:
-        > mkdir .ssh
+        > `mkdir .ssh`
     3. `Exit` out of the server back onto your client, then use this `scp` command:
-        > scp /Users/*username*/.ssh/id_rsa.pub *username*@ieng6.ucsd.edu:~/.ssh/authorized_keys
+        > `scp /Users/<username>/.ssh/id_rsa.pub <username>@ieng6.ucsd.edu:~/.ssh/`authorized_keys
         * We're copying the key over the server, so the server recognizes that our client has *matching* keys (so it automatically knows to log in)
     
     * You are done! Any command such as `ssh` or ``scp`` that requires you to enter your password will not require you to enter your password (as it will do it automatically).
@@ -171,11 +173,11 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 * Here are a few things that I found are pretty cool to make it easier between the client and the server computer:
     * Writing commands in **quotes**:
         * At the end of `ssh` commands, you can run specific commands directly on the remote server then exit.
-            > ssh *username*@ieng6.ucsd.edu **"ls"**
+            > `ssh *username*@ieng6.ucsd.edu **"ls"**`
             
         ![Image](/lab-report-1-images/quoteshortcut.png)
     * Using **semicolons** to run multiple commands in the same line:
-        > cp WhereAmI.java OtherMain.java; javac OtherMain.java; java OtherMain
+        > `cp WhereAmI.java OtherMain.java; javac OtherMain.java; java OtherMain`
     * Using the up-arrow (on your keyboard) to see the command you previously ran
     * The most coolest of all...getting extensions through VSCode to access the server computer remotely.
         * There's an extension in VSCode called **Remote - SSH**, and with a bit of manual labor to figure things out, you're able to access the server computer files that you want to edit.
