@@ -68,7 +68,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         * Changes directory (or path). Think of it like where your files are located.
             * ex. /home/linux/ieng6/cs15lsp22/cs15lsp22ajl
             * ex. /This_PC/Desktop/CSE_15L/randomfolder
-        * `cd <*directory*>`
+        * `cd <directory>`
             * Goes into a specific directory
         * `cd ~`
             * Goes back to home/root directory of your account
@@ -158,7 +158,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
     2. Once you're in the server, we'll be using the `mkdir` command to make a new & empty directory to make a *.ssh* directory in the server:
         > `mkdir .ssh`
     3. `Exit` out of the server back onto your client, then use this `scp` command:
-        > `scp /Users/<username>/.ssh/id_rsa.pub <username>@ieng6.ucsd.edu:~/.ssh/`authorized_keys
+        > `scp /Users/<username>/.ssh/id_rsa.pub <username>@ieng6.ucsd.edu:~/.ssh/authorized_keys`
         * We're copying the key over the server, so the server recognizes that our client has *matching* keys (so it automatically knows to log in)
     
     * You are done! Any command such as `ssh` or ``scp`` that requires you to enter your password will not require you to enter your password (as it will do it automatically).
@@ -173,7 +173,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 * Here are a few things that I found are pretty cool to make it easier between the client and the server computer:
     * Writing commands in **quotes**:
         * At the end of `ssh` commands, you can run specific commands directly on the remote server then exit.
-            > `ssh *username*@ieng6.ucsd.edu **"ls"**`
+            > `ssh <username>@ieng6.ucsd.edu "ls"`
             
         ![Image](/lab-report-1-images/quoteshortcut.png)
     * Using **semicolons** to run multiple commands in the same line:
