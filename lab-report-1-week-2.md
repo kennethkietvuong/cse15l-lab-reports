@@ -52,7 +52,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         Are you sure you want to continue connecting?
         ```
 
-        * When it prompts before connecting, type **yes** and enter.
+        * When it prompts before connecting, type `yes` and enter.
             * Afterwards, it will prompt you to enter your password, so **enter the password** you took from your *course-specific account* (your password won't display on the terminal, but it's there).
         * Once you've entered your password, you should be remotely connected to the ieng6 server!
 
@@ -63,8 +63,8 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 ## Run Commands on the Remote Computer
 * Now that we're able to access the server computer remotely through our computer (and specific account), let's try some commands that will be useful (both on your computer and the server computer).
 
-* Try to run commands in the terminal like *cd, ls, pwd, mkdir, cp*. Think about what it does. While it may seem it did nothing or did *something*, here are a few commands and what they mean:
-    * ## **cd**
+* Try to run commands in the terminal like *`cd, ls, pwd, mkdir, cp`*. Think about what it does. While it may seem it did nothing or did *something*, here are a few commands and what they mean:
+    * ## **`cd`**
         * Changes directory (or path). Think of it like where your files are located.
             * ex. /home/linux/ieng6/cs15lsp22/cs15lsp22ajl
             * ex. /This_PC/Desktop/CSE_15L/randomfolder
@@ -74,7 +74,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
             * Goes back to home/root directory of your account
         * `cd ..`
             * Goes back a directory
-    * ## **ls**
+    * ## **`ls`**
         * List files at that specific directory. Think of it as listing all the files of a programming assignment for a CS class.
         * `ls -lat`
             * Combination of:
@@ -87,16 +87,16 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         
         ![Image](/lab-report-1-images/runninglistcommand.png)
     
-    * ## **cp**
+    * ## **`cp`**
         * Copy files & directories
-    * ## **cat**
+    * ## **`cat`**
         * Print content out of a file. Think of it like reading from a text file without opening the text file.
-    * ## **exit**
+    * ## **`exit`**
         * Exit remotely from the server computer back to your own computer.
 
 <p>&nbsp;</p>
 
-## Moving Files over SSH with scp
+## Moving Files over SSH with `scp`
 * So, we know a few commands to run through the terminal to go back & forth, copy, and read files. Now let's go to the next level and transfer files from your computer to the server computer.
 
 * We are going to be using the `scp` command to make this magic work. SCP stands for Secure Copy Protocol, and basically it's another way to copy files (but between networks). We *always* run this command through the client (your computer).
