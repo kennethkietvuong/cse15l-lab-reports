@@ -1,2 +1,9 @@
 theme: jekyll-theme-slate
 title: testing
+subtitle: testing 2
+author:
+  name: insertname
+  email: bruh@bruh.com
+description: > 
+  This is a description. A description is a descrption within a description of a descirption.
+  New line desceriptin!
