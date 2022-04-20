@@ -1,3 +1,8 @@
+---
+layout: post
+title: Lab Report 1 - Week 2
+---
+
 # Lab Report 1 - Week 2
 
 Hello incoming 15L students (and myself)! Here's my journey on the very first lab of this course.
