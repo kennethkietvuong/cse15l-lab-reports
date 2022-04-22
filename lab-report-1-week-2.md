@@ -1,6 +1,6 @@
 [back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
 
-# Lab Report 1 - Week 2
+# Lab Report 1 - Week 2 (Remote Server Connection Through SSH)
 
 Hello incoming 15L students (and myself)! Here's my journey on the very first lab of this course.
 
