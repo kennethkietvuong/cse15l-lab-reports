@@ -1,3 +1,5 @@
+[back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
+
 # Lab Report 1 - Week 2
 
 Hello incoming 15L students (and myself)! Here's my journey on the very first lab of this course.
@@ -184,3 +186,5 @@ This is where it gets real cool but may be quite confusing. We're going to be **
             * ex. Editting WhereAmI.java in the server computer instead of your client computer...and then using the `scp` command.
             
 ![Image](/lab-report-1-images/remotessh_extension.png)
+
+[back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
