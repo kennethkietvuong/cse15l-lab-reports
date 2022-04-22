@@ -6,8 +6,6 @@
       <h2 style="text-align:center">Remote Server Connection Through SSH</h2>
    </body>
 
----
-
 Hello incoming 15L students (and myself)! Here's my journey on the very first lab of this course.
 
 Because this is the first lab, there's going to be a ton of things to set-up before we do some magic.
