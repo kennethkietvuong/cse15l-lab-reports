@@ -1,6 +1,9 @@
 [back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
 
-# Lab Report 2 - Week 4 (Incremental Development & Debugging)
+<body>
+      <h1 style="text-align:center">Lab Report 2 - Week 4</h1>
+      <h2 style="text-align:center">Incremental Development & Debugging</h2>
+   </body>
 
 Hey y'all! This is the second lab report for CSE 15L. This is all about the concept and uses of ***incremental development*** with the addition of ***debugging***.
 
