@@ -1,6 +1,6 @@
 this is the home page. *work in progress*.
 
-[Markdown Testing](bruhmoment.html)
+[Markdown Testing](markdowntest.md)
 
 # Lab Reports
 [Lab Report 1](lab-report-1-week-2.html)
