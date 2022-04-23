@@ -1,3 +1,5 @@
+<meta http-equiv="refresh" content="10">
+
 this is the home page. *work in progress*.
 
 [Markdown Testing](markdowntest.md)

@@ -1,5 +1,6 @@
 [back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
 
+<meta http-equiv="refresh" content="10">
 
 <body>
       <h1 style="text-align:center">Lab Report 1 - Week 2</h1>

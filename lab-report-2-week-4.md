@@ -1,5 +1,7 @@
 [back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
 
+<meta http-equiv="refresh" content="10">
+
 <body>
       <h1 style="text-align:center">Lab Report 2 - Week 4</h1>
       <h2 style="text-align:center">Incremental Development & Debugging</h2>
