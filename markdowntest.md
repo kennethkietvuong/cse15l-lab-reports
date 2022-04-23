@@ -1,5 +1,7 @@
 # This is a big header
 
+[back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
+
 ## This is a small header
 
 A **summary** is a *summary* of a summary within a summary of that summary.
