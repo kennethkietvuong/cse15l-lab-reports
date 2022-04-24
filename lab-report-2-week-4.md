@@ -69,21 +69,21 @@ This is where we use test cases to put our program to the test if it needs to be
 ---
 
 ### Test 1 - Empty Line At End of Text File
-Before I tried any tests, I initally ran `MarkdownParse` with the given test file [`test-file.md`](test-file.md).
+Before I tried any tests, I initally ran `MarkdownParse` with the given test file [`test-file.md`](/lab-report-assets/report2/test-file.md).
 
 After compiling and running the program with the given test file, my terminal **froze**! About half a minute later, I received an ***out of memory error***.
 
-![Image](/lab-report-2-images/test1_nomemory_symptom.png)
+![Image](/lab-report-assets/report2/lab-report-2-images/test1_nomemory_symptom.png)
 
 * Whenever we get an unintended output, we consider that as a **symptom**. In this case here with the given text file `test-file.md`, there's something about its input that makes `MarkdownParse` *not work*.
 
 So, now that we have a symptom, we have to figure out what is wrong with our program. After some time, here is the solution:
 
-![Image](/lab-report-2-images/test1_fix.png)
+![Image](/lab-report-assets/report2/lab-report-2-images/test1_fix.png)
 
 Now when we run the program, we now get:
 
-![Image](/lab-report-2-images/test1_output.png)
+![Image](/lab-report-assets/report2/lab-report-2-images/test1_output.png)
 
 Our expected output matches with the actual output now...hooray! But what was the problem to begin with?
 1. First off, let's focus on the **failure-inducing input** (or our test file that made our program not work).
@@ -101,23 +101,23 @@ Our expected output matches with the actual output now...hooray! But what was th
 ---
 
 ### Test 2 - Bracket with No Parentheses
-One test that I did was to try a given link title but with no actual link at all. Here is the text file here: [`test2.md`](test2.md).
+One test that I did was to try a given link title but with no actual link at all. Here is the text file here: [`test2.md`](/lab-report-assets/report2/test2.md).
 
 I found that as long as there is brackets and parentheses, the program works as intended. But what if there were **no parentheses** at all (*vice-versa with brackets too*)?
 
 Similarly like Test 1, I eventually recevied an ***out of memory error***.
 
-![Image](/lab-report-2-images/test2_nomemory_symptom.png)
+![Image](/lab-report-assets/report2/lab-report-2-images/test2_nomemory_symptom.png)
 
 * Again, this is the **symptom** to our program of `MarkdownParse`.
 
 Instead of just singling out that one symptom of the no parentheses. My partner and I further resolved the other cases where there were no brackets and extra variations between brackets and parentheses:
 
-![Image](/lab-report-2-images/test2_fix.png)
+![Image](/lab-report-assets/report2/lab-report-2-images/test2_fix.png)
 
 When we run the program, we get the expected:
 
-![Image](/lab-report-2-images/test2_output.png)
+![Image](/lab-report-assets/report2/lab-report-2-images/test2_output.png)
 
 1. Let's go into depth about the **failure-inducing input**:
     ```md
