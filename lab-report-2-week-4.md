@@ -65,6 +65,8 @@ So, with the original program, it looks good enough *normally*. Though this pose
 
 This is where we use test cases to put our program to the test if it needs to be more *refined*.
 
+<p>&nbsp;</p>
+
 ### Test 1 - Out of Memory/Heap Error
 Before I tried any tests, I initally ran `MarkdownParse` with the given test file [`test-file.md`](test-file.md).
 
@@ -94,6 +96,8 @@ Our expected output matches with the actual output now...hooray! But what was th
     * The issue that caused `MarkdownParse` to work work occurred at the end, where there was an ***empty line space after the last link***.
 * This implies that the **bug** with our program is that it ***continues to parse through the file even though it has reached the end***.
 * Thus the **symptom occurs**, where the run-time stacks up to the point my computer ran out of memory for it to continue on!
+
+<p>&nbsp;</p>
 
 ### Test 2 - ???
 insert text here
