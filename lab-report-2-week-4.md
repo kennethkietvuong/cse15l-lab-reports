@@ -59,6 +59,7 @@ public class MarkdownParse {
 
 * In simple terms, the code reads the first opened and closed bracket in defining the string to be split into substrings, where the content inside the first opened and closed parentheses will considered a URL to be added into the list.
 
+<p>&nbsp;</p>
 
 ## Improving the Program
 So, with the original program, it looks good enough *normally*. Though this poses a problem if there were cases where links aren't read or that an invalid link is included.
@@ -66,6 +67,8 @@ So, with the original program, it looks good enough *normally*. Though this pose
 This is where we use test cases to put our program to the test if it needs to be more *refined*.
 
 <p>&nbsp;</p>
+
+---
 
 ### Test 1 - Out of Memory/Heap Error
 Before I tried any tests, I initally ran `MarkdownParse` with the given test file [`test-file.md`](test-file.md).
