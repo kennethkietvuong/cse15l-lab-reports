@@ -105,7 +105,7 @@ One test that I did was to try a given link title but with no actual link at all
 
 I found that as long as there is brackets and parentheses, the program works as intended. But what if there were **no parentheses** at all (*vice-versa with brackets too*)?
 
-Similarly like Test 1, I eventually recevied an ***out of memory error***.
+Similarly like Test 1, I eventually received an ***out of memory error***.
 
 ![Image](/lab-report-assets/report2/lab-report-2-images/test2_nomemory_symptom.png)
 
@@ -127,6 +127,7 @@ When we run the program, we get the expected:
     My favorite search engine is [first]
     ```
     * Basically the initial program ***reads whenever the next bracket or parentheses opens and closes***. Between that is considered a string of substrings that would make up the URL.
+    * Because there are no parentheses at the last link of `[first]`, it continues to read until there are parentheses.
 2. This leads to the **bug**, where `MarkdownParse` reads the next line(s) when it is not suppose to.
     * *The brackets and parentheses denote a start and end.*
 3. Thus similarly like test 1, the **symptom occurs**, where the run-time goes over my computer's memory causing the out-of-memory error.
@@ -134,4 +135,32 @@ When we run the program, we get the expected:
 ---
 
 ### Test 3 - "Invisible" Invalid Link Counts as Valid
-insert text here
+Another test that we looked at is whether or not if we didn't put a URL into the parentheses. Here is the text file that we tested: [test5.md](https://kennethkietvuong.github.io/cse15l-lab-reports/lab-report-assets/report2/test5.md)
+
+In this particular case, we wanted to see whether or not that if nothing inside the parentheses counted as a valid link.
+* Ex. `[link]()`
+
+In our case, we do not want to consider that nothing inside the parentheses is a link. So when we ran `MarkdownParse`, we got this:
+
+![Image](/lab-report-assets/report2/lab-report-2-images/test3_symptom.png)
+
+*  This is certainly a **symptom**, since we got the wrong output that we wanted. In this case, it should be just `[link]` and that there is only 1 element inside the list.
+
+So, as a fix for this, I made a quick fix that ***checks over the list*** after it has parsed through the text file to check whether or not the elements (or the URLs or links) is considered to be nothing at all or valid:
+
+![Image](/lab-report-assets/report2/lab-report-2-images/test3_fix.png)
+
+When we run the program, we now get:
+
+![Image](/lab-report-assets/report2/lab-report-2-images/test3_output.png)
+
+1. Let's focus on the **failure-inducing input**:
+    ```md
+    [uh]()
+
+    [okay](link)
+    ```
+    * In this case, the program considered the first "link" inside the parentheses to be valid (*which it isn't suppose to*).
+2. This goes to the **bug**, where `MarkdownParse` doesn't check whether or not the URLs inside the list are valid afterwards.
+    * *An empty space shouldn't be considered a link*
+3. Thus, we receive a **symptom** that is considered to be a ***logical error*** (or that our program works but produces the wrong output).
