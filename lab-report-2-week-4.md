@@ -164,3 +164,5 @@ When we run the program, we now get:
 2. This goes to the **bug**, where `MarkdownParse` doesn't check whether or not the URLs inside the list are valid afterwards.
     * *An empty space shouldn't be considered a link*
 3. Thus, we receive a **symptom** that is considered to be a ***logical error*** (or that our program works but produces the wrong output).
+
+[back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
