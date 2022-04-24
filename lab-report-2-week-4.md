@@ -69,7 +69,7 @@ This is where we use test cases to put our program to the test if it needs to be
 ---
 
 ### Test 1 - Empty Line At End of Text File
-Before I tried any tests, I initally ran `MarkdownParse` with the given test file [`test-file.md`](/lab-report-assets/report2/test-file.md).
+Before I tried any tests, I initally ran `MarkdownParse` with the given test file [test-file.md](/lab-report-assets/report2/test-file.html).
 
 After compiling and running the program with the given test file, my terminal **froze**! About half a minute later, I received an ***out of memory error***.
 
@@ -101,7 +101,7 @@ Our expected output matches with the actual output now...hooray! But what was th
 ---
 
 ### Test 2 - Bracket with No Parentheses
-One test that I did was to try a given link title but with no actual link at all. Here is the text file here: [`test2.md`](/lab-report-assets/report2/test2.md).
+One test that I did was to try a given link title but with no actual link at all. Here is the text file here: [test2.md](/lab-report-assets/report2/test2.html).
 
 I found that as long as there is brackets and parentheses, the program works as intended. But what if there were **no parentheses** at all (*vice-versa with brackets too*)?
 
