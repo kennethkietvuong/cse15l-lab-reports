@@ -19,7 +19,7 @@ Before everything happens, let's start off with getting a text editor to code. T
 * Head to the [Visual Code Studio](https://code.visualstudio.com/download) website & download the one for your operating system.
     * When you open VSCode, you should sort of see this image below (and that means you're good to go!)
 
-![Image](/lab-report-1-images/vscode_setup.png)
+![Image](/lab-report-assets/lab-report-1-images/vscode_setup.png)
 
 <p>&nbsp;</p>
 
@@ -31,12 +31,12 @@ This is where it gets real cool but may be quite confusing. We're going to be **
     * **OpenSSH Client**
     * **OpenSSH Server**
 
-![Image](/lab-report-1-images/preinstallationssh.png)
+![Image](/lab-report-assets/lab-report-1-images/preinstallationssh.png)
 
 ### Part 2 - Finding your course-specific account
 * Once you have installed OpenSSH, we first need to know what your [**course-specific account**](https://sdacs.ucsd.edu/~icc/index.php) is for 15L.
     * Go to the link above and lookup your account with your *UCSD username* (without the @ucsd.edu) and *student ID*.
-    ![Image](/lab-report-1-images/findingaccount1.png)
+    ![Image](/lab-report-assets/lab-report-1-images/findingaccount1.png)
     * Once you're in, under **Additional Accounts**, you should see a button with a username of *cs15lsp22###*
         * cs15l is the course
         * sp22 is the current quarter
@@ -50,7 +50,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
     1. Open VSCode and open a new terminal (there's a tab up top called *Terminal*, press *New Terminal*)
         * You should now see a terminal pop-up of your operating system's main command-line (in my case, it's windows powershell)
 
-        ![Image](/lab-report-1-images/terminalempty.png)
+        ![Image](/lab-report-assets/lab-report-1-images/terminalempty.png)
     2. Within the terminal, type: 
     > `ssh username@ieng6.ucsd.edu`
     3. (Optional) If in the case this is your first-time (which it probably is), you will probably get a message that denotes:
@@ -64,7 +64,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
             * Afterwards, it will prompt you to enter your password, so **enter the password** you took from your *course-specific account* (your password won't display on the terminal, but it's there).
         * Once you've entered your password, you should be remotely connected to the ieng6 server!
 
-        ![Image](lab-report-1-images\connectingtoserver.png)
+        ![Image](/lab-report-assets/lab-report-1-images\connectingtoserver.png)
 
 <p>&nbsp;</p>
 
@@ -93,7 +93,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
                 * `ls -t`
                     * List files by recent date modified
         
-        ![Image](/lab-report-1-images/runninglistcommand.png)
+        ![Image](/lab-report-assets/lab-report-1-images/runninglistcommand.png)
     
     * ## **`cp`**
         * Copy files & directories
@@ -136,7 +136,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
 3. You're able to use the `javac` & `java` commands to run the file, as the server has java installed! Try running those two commands to see what you get.
     * You probably should get the properties of the server computer that you are accessing!
     
-    ![Image](/lab-report-1-images/scptransferfile.png)
+    ![Image](/lab-report-assets/lab-report-1-images/scptransferfile.png)
 
 <p>&nbsp;</p>
 
@@ -158,7 +158,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
     * It'll ask to enter the same passphrase again. Hit enter again.
 4. You'll see that it has saved the identification and public key to a specific directory. Also you should see the *key fingerprint* & the *key's randomart image* (pretty neat!).
     
-    ![Image](/lab-report-1-images/ssh-keygen.png)
+    ![Image](/lab-report-assets/lab-report-1-images/ssh-keygen.png)
 
 ### Part 2 - Copying Public Key to Your Account on the Server
 * Now that we have two keys (public and private), we'll need copy the public key to the `.ssh` directory of your account in the server.
@@ -171,7 +171,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
     
     * You are done! Any command such as `ssh` or ``scp`` that requires you to enter your password will not require you to enter your password (as it will do it automatically).
 
-    ![Image](/lab-report-1-images/connect_without_password.png)
+    ![Image](/lab-report-assets/lab-report-1-images/connect_without_password.png)
 
 <p>&nbsp;</p>
 
@@ -183,7 +183,7 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         * At the end of `ssh` commands, you can run specific commands directly on the remote server then exit.
             > `ssh <username>@ieng6.ucsd.edu "ls"`
             
-        ![Image](/lab-report-1-images/quoteshortcut.png)
+        ![Image](/lab-report-assets/lab-report-1-images/quoteshortcut.png)
     * Using **semicolons** to run multiple commands in the same line:
         > `cp WhereAmI.java OtherMain.java; javac OtherMain.java; java OtherMain`
     * Using the up-arrow (on your keyboard) to see the command you previously ran
@@ -191,6 +191,6 @@ This is where it gets real cool but may be quite confusing. We're going to be **
         * There's an extension in VSCode called **Remote - SSH**, and with a bit of manual labor to figure things out, you're able to access the server computer files that you want to edit.
             * ex. Editting WhereAmI.java in the server computer instead of your client computer...and then using the `scp` command.
             
-![Image](/lab-report-1-images/remotessh_extension.png)
+![Image](/lab-report-assets/lab-report-1-images/remotessh_extension.png)
 
 [back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
