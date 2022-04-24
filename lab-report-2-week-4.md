@@ -87,7 +87,7 @@ Now when we run the program, we now get:
 
 Our expected output matches with the actual output now...hooray! But what was the problem to begin with?
 * First off, let's focus on the **failure-inducing input** (or our test file that made our program not work).
-    ```
+    ```md
     # Title
 
     [link1](https://something.com)
@@ -98,7 +98,7 @@ Our expected output matches with the actual output now...hooray! But what was th
 * This implies that the **bug** with our program is that it ***continues to parse through the file even though it has reached the end***.
 * Thus the **symptom occurs**, where the run-time stacks up to the point my computer ran out of memory for it to continue on!
 
-<p>&nbsp;</p>
+---
 
 ### Test 2 - ???
 insert text here
