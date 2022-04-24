@@ -66,8 +66,6 @@ So, with the original program, it looks good enough *normally*. Though this pose
 
 This is where we use test cases to put our program to the test if it needs to be more *refined*.
 
-<p>&nbsp;</p>
-
 ---
 
 ### Test 1 - Out of Memory/Heap Error
