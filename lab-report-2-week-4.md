@@ -69,7 +69,7 @@ This is where we use test cases to put our program to the test if it needs to be
 ---
 
 ### Test 1 - Empty Line At End of Text File
-Before I tried any tests, I initally ran `MarkdownParse` with the given test file [test-file.md](https://kennethkietvuong.github.io/cse15l-lab-reports/lab-report-assets/report2/test-file.md).
+Before I tried any tests, I initally ran `MarkdownParse` with the given test file [test-file.md](https://github.com/kennethkietvuong/cse15l-lab-reports/blob/main/lab-report-assets/report2/test-file.md?plain=1).
 
 After compiling and running the program with the given test file, my terminal **froze**! About half a minute later, I received an ***out of memory error***.
 
@@ -101,7 +101,7 @@ Our expected output matches with the actual output now...hooray! But what was th
 ---
 
 ### Test 2 - Bracket with No Parentheses
-One test that I did was to try a given link title but with no actual link at all. Here is the text file here: [test2.md](https://kennethkietvuong.github.io/cse15l-lab-reports/lab-report-assets/report2/test2.md).
+One test that I did was to try a given link title but with no actual link at all. Here is the text file here: [test2.md](https://github.com/kennethkietvuong/cse15l-lab-reports/blob/main/lab-report-assets/report2/test2.md?plain=1).
 
 I found that as long as there is brackets and parentheses, the program works as intended. But what if there were **no parentheses** at all (*vice-versa with brackets too*)?
 
@@ -135,7 +135,7 @@ When we run the program, we get the expected:
 ---
 
 ### Test 3 - "Invisible" Invalid Link Counts as Valid
-Another test that we looked at is whether or not if we didn't put a URL into the parentheses. Here is the text file that we tested: [test5.md](https://kennethkietvuong.github.io/cse15l-lab-reports/lab-report-assets/report2/test5.md)
+Another test that we looked at is whether or not if we didn't put a URL into the parentheses. Here is the text file that we tested: [test5.md](https://github.com/kennethkietvuong/cse15l-lab-reports/blob/main/lab-report-assets/report2/test5.md?plain=1)
 
 In this particular case, we wanted to see whether or not that if nothing inside the parentheses counted as a valid link.
 * Ex. `[link]()`
