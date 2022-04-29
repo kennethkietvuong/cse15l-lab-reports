@@ -94,7 +94,7 @@ Our expected output matches with the actual output now...hooray! But what was th
     [link2](some-thing.html)
 
     ```
-    * The issue that caused `MarkdownParse` to work work occurred at the end, where there was an ***empty line space after the last link***.
+    * The issue that caused `MarkdownParse` to not work occurred at the end, where there was an ***empty line space after the last link***.
 2. This implies that the **bug** with our program is that it ***continues to parse through the file even though it has reached the end***.
 3. Thus the **symptom occurs**, where the run-time stacks up to the point my computer ran out of memory for it to continue on!
 
