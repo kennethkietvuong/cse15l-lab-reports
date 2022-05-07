@@ -118,5 +118,39 @@ Besides that, you should be able to push your changes now!
 * [Link](https://github.com/kennethkietvuong/SkillDemo1/commit/780894995a180d62b8bc335d304a8074ce4e1f56) to commit here.
 
 ## Copy Whole Directories w/ `scp -r`
+We often deal with directories filled with a ton of files. It could be that we have folders within folders or even more. So, we're going to be using a single line to copy an entire directory and run it through `ieng6`.
+
+In my case, I'm going to be making an entire copy of my `MarkdownParse` directory. This entire command is multiple commands in a single line:
+
+> `scp -r . ieng6:~/markdown-parse-copy; ssh ieng6 "cd markdown-parse-copy; /software/CSE/oracle-java-17/jdk-17.0.1/bin/javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest.java; /software/CSE/oracle-java-17/jdk-17.0.1/bin/java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest"`
+
+1. Using `scp` to copy entire directory to `ieng6` server
+    > `scp -r . cs15lsp22@ieng6.ucsd.edu:~/markdown-parse-copy`
+    * The **`markdown-parse-copy`** at the end of the this command can be any file name.
+    * This also combines our streamline ssh short key `ieng6`
+    * Make sure in your command line directory, that you are **INSIDE THE DIRECTORY YOU WANT TO COPY**
+        * ex. `...\GitHub\markdown-parser> scp -r . ieng6...`
+
+2. Log into `ieng6` & going into the copied directory
+    > `ssh ieng6 "cd markdown-parse-copy;...`
+    * Everything in quotes will be now continued in the `ieng6` operating system (which I believe is linux)
+    * *The `...` refers to the following commands below*
+
+3. Compiling the tester
+    > `.../software/CSE/oracle-java-17/jdk-17.0.1/bin/javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest.java;...`
+
+4. Running the tester
+    > `.../software/CSE/oracle-java-17/jdk-17.0.1/bin/java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest"`
+
+# Result
+Here are the results of this single line:
+
+* Keep in mind that this is partially all the files copied in the screenshot (it keeps running until it copies everything in the directory)
+![Image](/lab-report-assets/report3/result1.png)
+![Image](/lab-report-assets/report3/result2.png)
+
+* Checking if the copied directory is there:
+![Image](/lab-report-assets/report3/result3.png)
+
 
 [back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
