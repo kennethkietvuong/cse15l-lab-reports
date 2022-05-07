@@ -86,3 +86,35 @@ To be honest, this took so much effort to figure out how to allow pushing and al
 
 ![Image](/lab-report-assets/report3/ssh_keygithub.png)
 * There should be at least a key like above (*I have multiple keys as I had trouble getting it to work except for the last key that is green*)
+
+4. Additionally, I added this these lines into my `.ssh config` file:
+```
+Host github.com
+    HostName github.com
+    User <insertusernamehere>
+    IdentityFile ~/.ssh/id_rsa_github
+```
+* NOTE: *Your username is your github username.*
+
+Now that we technically have a key setup for GitHub Access, it is time to attempt to push commits from `ieng6`. Here are some things to recognize or to troubleshoot on:
+
+1. If you cloned your repository via `HTTPS`, you're going to need to use this command to make it work for `SSH`:
+> `git remote set-url origin git@github.com:<\github_username>/<\repository_name>.git`
+    
+* When you try to push your commits back to GitHub, if you don't do this (and that you cloned HTTPS), it's still going to ask for your username & password...which is not what we want.
+    * In a sense, it is like you do not have a connection to Github and the remote server
+    * [Solution Post](https://stackoverflow.com/questions/14762034/push-to-github-without-a-password-using-ssh-key)
+
+2. Double check that your public/private key pairs match in GitHub
+
+3. If all goes to fail, generate a **`personal access token`** that you can copy and paste as your password (your username remains the same though).
+![Image](/lab-report-assets/report3/personal_accesstoken.png)
+
+Besides that, you should be able to push your changes now!
+
+![Image](/lab-report-assets/report3/github_access_success.png)
+
+![Image](/lab-report-assets/report3/repo_changed_access.png)
+* [Link](https://github.com/kennethkietvuong/SkillDemo1/commit/780894995a180d62b8bc335d304a8074ce4e1f56) to commit here.
+
+## Copy Whole Directories w/ `scp -r`
