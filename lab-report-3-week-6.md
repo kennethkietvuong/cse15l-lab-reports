@@ -118,3 +118,5 @@ Besides that, you should be able to push your changes now!
 * [Link](https://github.com/kennethkietvuong/SkillDemo1/commit/780894995a180d62b8bc335d304a8074ce4e1f56) to commit here.
 
 ## Copy Whole Directories w/ `scp -r`
+
+[back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
