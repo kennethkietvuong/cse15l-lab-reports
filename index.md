@@ -1,7 +1,10 @@
 <meta http-equiv="refresh" content="10">
 
+<img ALIGN="left" src="images/myself.jpg" width="100">
 
-this is the home page. *work in progress*.
+    this is the home page. *work in progress*.
+
+
 
 [Markdown Testing](markdowntest.md)
 
