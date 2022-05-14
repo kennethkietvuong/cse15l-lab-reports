@@ -124,12 +124,17 @@ In my case, I'm going to be making an entire copy of my `MarkdownParse` director
 
 > `scp -r . ieng6:~/markdown-parse-copy; ssh ieng6 "cd markdown-parse-copy; /software/CSE/oracle-java-17/jdk-17.0.1/bin/javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest.java; /software/CSE/oracle-java-17/jdk-17.0.1/bin/java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest"`
 
+Before doing it in a single line, we need to recognize what we are doing step by step:
+
 1. Using `scp` to copy entire directory to `ieng6` server
-    > `scp -r . cs15lsp22@ieng6.ucsd.edu:~/markdown-parse-copy`
+    > `scp -r . ieng6:~/markdown-parse-copy`
     * The **`markdown-parse-copy`** at the end of the this command can be any file name.
     * This also combines our streamline ssh short key `ieng6`
     * Make sure in your command line directory, that you are **INSIDE THE DIRECTORY YOU WANT TO COPY**
         * ex. `...\GitHub\markdown-parser> scp -r . ieng6...`
+    
+    ![Image](/lab-report-assets/report3/single_scp_entire_directory.png)
+    ![Image](/lab-report-assets/report3/single_scp_entire_directory2.png)
 
 2. Log into `ieng6` & going into the copied directory
     > `ssh ieng6 "cd markdown-parse-copy;...`
@@ -142,8 +147,11 @@ In my case, I'm going to be making an entire copy of my `MarkdownParse` director
 4. Running the tester
     > `.../software/CSE/oracle-java-17/jdk-17.0.1/bin/java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest"`
 
+![Image](/lab-report-assets/report3/run_test_in_ssh.png)
+
+
 # Result
-Here are the results of this single line:
+Here are the results when we run this single line:
 
 * Keep in mind that this is partially all the files copied in the screenshot (it keeps running until it copies everything in the directory)
 ![Image](/lab-report-assets/report3/result1.png)
