@@ -70,3 +70,5 @@ And there's still some more text after that.
 
 And then there's more text
 ```
+
+[back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
