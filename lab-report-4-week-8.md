@@ -13,7 +13,11 @@ What does **cleaning up your code** mean? In short, it means to make your code *
 
 Simply, ***clean code is code that clearly displays its intended purpose and that is is simple.***
 
-Below, I will test 3 snippets to another person's implementation and my own implementation of `MarkdownParse.java`.
+Below, I will test 3 snippets to another person's implementation of `MarkdownParse` with my own implementation:
+
+* My [`MarkdownParse`](https://github.com/kennethkietvuong/markdown-parse-copy)
+
+* Other's [`MarkdownParse`](https://github.com/ANGUYEN625/markdown-parser)
 
 <p>&nbsp;</p>
 
@@ -28,4 +32,41 @@ Below, I will test 3 snippets to another person's implementation and my own impl
 [`cod[e`](google.com)
 
 [`code]`](ucsd.edu)
+```
+
+## Snippet 2
+```md
+[a [nested link](a.com)](b.com)
+
+[a nested parenthesized url](a.com(()))
+
+[some escaped \[ brackets \]](example.com)
+```
+
+## Snippet 3
+```md
+[this title text is really long and takes up more than 
+one line
+
+and has some line breaks](
+    https://www.twitter.com
+)
+
+[this title text is really long and takes up more than 
+one line](
+https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule
+)
+
+
+[this link doesn't have a closing parenthesis](github.com
+
+And there's still some more text after that.
+
+[this link doesn't have a closing parenthesis for a while](https://cse.ucsd.edu/
+
+
+
+)
+
+And then there's more text
 ```
