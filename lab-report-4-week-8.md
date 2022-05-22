@@ -13,17 +13,15 @@ What does **cleaning up your code** mean? In short, it means to make your code *
 
 Simply, ***clean code is code that clearly displays its intended purpose and that is is simple.***
 
-Below, I will test 3 snippets to another person's implementation of `MarkdownParse` with my own implementation:
+Below, I will test 3 snippets to another person's implementation of `MarkdownParse` with my own implementation. These snippets deal with the **markdown syntax** when using *backticks*.
 
-* My [`MarkdownParse`](https://github.com/kennethkietvuong/markdown-parse-copy)
+* My [`MarkdownParse`](https://github.com/JasonMorris1/markdown-parser)
 
 * Other's [`MarkdownParse`](https://github.com/ANGUYEN625/markdown-parser)
 
 <p>&nbsp;</p>
 
 ## Snippet 1
-
-
 ```md
 `[a link`](url.com)
 
@@ -33,6 +31,44 @@ Below, I will test 3 snippets to another person's implementation of `MarkdownPar
 
 [`code]`](ucsd.edu)
 ```
+
+The first snippet here shows a clear issue with using the backticks syntax within a link format. In this case, when running `MarkdownParse.java`, it should produce a list of:
+> `[google.com]`
+
+Everything else (*besides the third line*) in the snippet above clearly violates the markdown syntax for a link.
+
+### Testing the Snippet
+```java
+    @Test
+    public void snippet1() {
+        List<String> expect = List.of("google.com");
+        try {
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("snippet1.md"));
+            assertEquals(links, expect);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+```
+Within `MarkdownParseTest.java`, here is the code that I will be using to see whether or not my implementation and someone else's implementation will work.
+* Note: I put the snippet into a file called `snippet1.md`
+
+### My Implementation
+After running the file to my implementation, it seems like my `MarkdownParse` **didn't work** as expected:
+
+![Image](/lab-report-assets/report4/snippet1_own_fail.png)
+
+### Other Implementation
+After running the file to someone else's implementation, it also **failed**:
+
+![Image](/lab-report-assets/report4/snippet1_other_fail.png)
+* Note: *Besides the snippet failed test, this implementation had other issues also!*
+
+### Clean Code Change
+Overall, if I had to improve on the code by adding a **small code change** (*as per clean code guidelines*), I think it <u>may likely be possible</u> to deal with the backtick syntax issues with markdown. For example:
+* Could add a few lines dealing with the backticks itself, so before checking where the parentheses and brackets are, first check the backticks are within the link format itself.
+    * Similar to how we locate the URL of the link within the parenthese, we locate what's in-between the backticks to see if there are parenthese & brackets (*so we can not consider it to be a valid link and move on*).
 
 ## Snippet 2
 ```md
