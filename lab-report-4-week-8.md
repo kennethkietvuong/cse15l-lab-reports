@@ -33,7 +33,7 @@ Below, I will test 3 snippets to another person's implementation of `MarkdownPar
 ```
 
 The first snippet here shows a clear issue with using the backticks syntax within a link format. In this case, when running `MarkdownParse.java`, it should produce a list of:
-> `[google.com]`
+> `["google.com"]`
 
 Everything else (*besides the third line*) in the snippet above clearly violates the markdown syntax for a link.
 
@@ -79,6 +79,45 @@ Overall, if I had to improve on the code by adding a **small code change** (*as 
 [some escaped \[ brackets \]](example.com)
 ```
 
+For the second snippet, it deals with nested formatting potential issues with markdown. In this case, when running `MarkdownParse.java`, it should produce a list of:
+> `[]`
+
+*If it doesn't look like an obvious valid link, it's not a valid link.*
+
+### Testing the Snippet
+```java
+    @Test
+    public void snippet2() {
+        List<String> expect = List.of();
+        try {
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("snippet2.md"));
+            assertEquals(links, expect);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+```
+Within `MarkdownParseTest.java`, above is the next test for snippet 2.
+* Note: I put the snippet into a file called `snippet2.md`
+
+### My Implementation
+After running the tester, it looks like it **passed**!
+
+![Image](/lab-report-assets/report4/snippet2_own_pass.png)
+* Note: *Snippet 1 still remains as an issue.*
+
+### Other Implementation
+After running on someone else's implementation, their tests for `MarkdownParse.java` seems to have **failed**!
+
+![Image](/lab-report-assets/report4/snippet2_other_fail.png)
+* Note: *This implementation has additional issues*.
+
+### Clean Code Change
+So, how would I ***clean up my code*** with a small change? To be honest, my implementation passed so it's good enough. But, if I had to, one minor tweak would be to <u>make the code more simple or to make it look not as cluttered</u>. Besides that, any other changes would focus on the brackets and the parentheses when dealing with nested stuff.
+* Make the code look neat/organized
+* Focus on adding on having a check to see if the actual URL link is valid in a real-world scenario.
+
 ## Snippet 3
 ```md
 [this title text is really long and takes up more than 
@@ -106,5 +145,48 @@ And there's still some more text after that.
 
 And then there's more text
 ```
+
+For the third and last snippet, this deals with a ton of spaces where the parentheses/brackets are in different line. When we run `MarkdownParse.java`, it should produce a list of:
+> `["https://www.twitter.com", "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule"]`
+
+*The link format should have adjacent syntax that doesn't have empty spacing.*
+
+### Testing the Snippet
+```java
+    @Test
+    public void snippet3() {
+        List<String> expect = List.of("https://www.twitter.com", "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+        try {
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("snippet3.md"));
+            assertEquals(links, expect);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+```
+
+Above is the snippet 3 test that I'll be using to check if the outputs match for `MarkdownParse.java`.
+* Note: I put the snippet into a file called `snippet3.md`
+
+### My Implementation
+After running the tester, it looks like it **passed** too!
+
+![Image](/lab-report-assets/report4/snippet3_own_pass.png)
+* Note: *Snippet 1 still remains as an issue.*
+
+### Other Implementation
+After running on someone else's implementation, their tests for `MarkdownParse.java` seems to have **failed** by a *huuuuge* margin:
+
+![Image](/lab-report-assets/report4/snippet3_other_fail.png)
+* Note: *This implementation has additional issues*.
+
+### Clean Code Change
+In making a **small code change** in my implementation for the basis of ***clean code***, I think it's good enough. There doesn't seem to be much to change, unless we want the empty spaces within a file to be considered also. My implementation focuses on links that are formatted next to each other. As long as they are within the next line of each other, it's okay. But if there's an empty white space in-between, that doesn't count as a valid link. Besides that it <u>may be possible to shorten or add some code to make it more better</u>.
+* Add a few lines in considering white space in a text file as a condition or check for valid link
+* Configure it so specific links are only valid
+    * *Checking to see if a link looks like it works on a browser*
+
+<p>&nbsp;</p>
 
 [back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
