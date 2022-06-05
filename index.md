@@ -2,8 +2,6 @@
 
 this is the home page. *work in progress perhaps?*
 
-![Image](https://tenor.com/view/dorime-patrick-star-praying-hand-together-spongebob-gif-16212519)
-
 [Markdown Testing](markdowntest.md)
 
 # Lab Reports
