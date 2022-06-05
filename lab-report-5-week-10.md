@@ -19,6 +19,10 @@ If we have two separate programs which do the same function, how do we compare t
 
 The command I used to find the different results of two `MarkdownParse` programs (*mine & lab 9's*) is `vimdiff`, where I compared two text files with one and another to see if the results match or are different!
 
+* My [`results.txt`](/lab-report-assets/report5/results_mine.txt)
+
+* Lab 9's [`results.txt`](/lab-report-assets/report5/results_lab9.txt)
+
 
 
 [back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
