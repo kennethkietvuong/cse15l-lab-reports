@@ -23,6 +23,36 @@ The command I used to find the different results of two `MarkdownParse` programs
 
 * Lab 9's [`results.txt`](/lab-report-assets/report5/results_lab9.txt)
 
+The specific command I used for `vimdiff` is:
+> `vimdiff my-markdown-parser/results.txt markdown-parser-lab9/results.txt`
+
+* The first `results.txt` is comparing a file within my markdown directory
+* The second `results.txt` is comparing a file within lab 9's markdown directory
+
+### Test 421
+For the test case #421, using `vimdiff`, here are the results:
+
+![Image](/lab-report-assets/report5/test-file421.png)
+
+* *The left is my markdown & the right is lab 9's markdown*
+   * My markdown resulted in `[]`
+   * Lab 9's markdown resulted in `[/url]`
+
+The test file for #421 is:
+```md
+**foo [bar](/url)**
+```
+
+* Looking at the link, it looks like the output should result in `[/url]`
+
+   * It looks like ***lab 9's implementation of a markdown parser was correct***
+   * While my markdown parser was ***not successful***
+
+So what was wrong with my implementation?
+* I think the core *bug* with my implementation is that my `MarkdownParse` looks for **actual and real valid link** that would work <u>realistically</u>. So when it parsed through the test file of #421, it saw `/url` as a link, ***but not a valid link***. If I were to fix my Markdown, I would probably deal with the *code that checks actual valid links*.
+
+![Image](/lab-report-assets/report5/code_debug.png)
+
 
 
 [back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
