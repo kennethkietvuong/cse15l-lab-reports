@@ -29,12 +29,14 @@ The specific command I used for `vimdiff` is:
 * The first `results.txt` is comparing a file within my markdown directory
 * The second `results.txt` is comparing a file within lab 9's markdown directory
 
+<p>&nbsp;</p>
+
 ### Test 421
 For the test case #421, using `vimdiff`, here are the results:
 
 ![Image](/lab-report-assets/report5/test-file421.png)
 
-* *The left is my markdown & the right is lab 9's markdown*
+* *The left is my markdown & the right is lab 9's markdown (open the image in a new tab to see better!)*
    * My markdown resulted in `[]`
    * Lab 9's markdown resulted in `[/url]`
 
@@ -53,13 +55,14 @@ So what was wrong with my implementation?
 
 ![Image](/lab-report-assets/report5/code_debug.png)
 
+<p>&nbsp;</p>
 
 ### Test 194
 For test case #194, using `vimdiff`, the results are:
 
 ![Image](/lab-report-assets/report5/test-file194.png)
 
-* *The left is my markdown & the right is lab 9's markdown*
+* *The left is my markdown & the right is lab 9's markdown (open the image in a new tab to see better!)*
    * My markdown resulted in `[]`
    * Lab 9's markdown resulted in `[url]`
 
