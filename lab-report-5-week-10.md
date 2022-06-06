@@ -45,8 +45,8 @@ The test file for #421 is:
 
 * Looking at the link, it looks like the output should result in `[/url]`
 
-   * It looks like ***lab 9's implementation of a markdown parser was correct***
-   * While my markdown parser was ***not successful***
+   * It looks like ***lab 9's implementation of a markdown parser was <u>correct</u>***
+   * While ***my markdown parser was <u>not successful</u>***
 
 So what was wrong with my implementation?
 * I think the core *bug* with my implementation is that my `MarkdownParse` looks for **actual and real valid link** that would work <u>realistically</u>. So when it parsed through the test file of #421, it saw `/url` as a link, ***but not a valid link***. If I were to fix my Markdown, I would probably deal with the *code that checks actual valid links*.
@@ -54,5 +54,36 @@ So what was wrong with my implementation?
 ![Image](/lab-report-assets/report5/code_debug.png)
 
 
+### Test 194
+For test case #194, using `vimdiff`, the results are:
+
+![Image](/lab-report-assets/report5/test-file194.png)
+
+* *The left is my markdown & the right is lab 9's markdown*
+   * My markdown resulted in `[]`
+   * Lab 9's markdown resulted in `[url]`
+
+The test file for #194 is:
+```md
+[Foo*bar\]]:my_(url) 'title (with parens)'
+
+[Foo*bar\]]
+```
+
+* Just looking at this file, it clearly looks like the output should result in `[]`
+
+   * Thus, I can conclude that ***lab 9's implementation was <u>wrong</u>***
+   * While ***my markdown parser was <u>right</u>***
+
+So what went wrong compared to my markdown and lab 9's markdown implementation?
+* I believe that the **bug** that overall came about with lab 9's is that they didn't acknowledge the **overlapping syntaxes** that would consider the link to be invalid. In the markdown preview, it does show that it works, but just looking at the test file, it clearly should not work if there are a ton of weird syntaxes that counteract the syntax for a link. I'm not sure about a fix for lab 9's markdown, but a suggestion would be to **check the overlapping syntax formatting issues first** before checking the actual link.
+
+![Image](/lab-report-assets/report5/code-debug-lab9.png)
+
+
+## Conclusion
+To sum it up, ***there is no perfect `MarkdownParse`***, where each one has its advantages than others (*includes weaknesses & flaws*). For the most part, my `MarkdownParse` had a huge difference than lab 9's `MarkdownParse` due to my code checking if it is an actual & real valid link, while lab 9 does not check for syntax issues. Either way, ***if it works, it works***.
+
+*Shoutout to the amazing TAs & the Prof himself for making the course interesting and neat! While sometimes I felt that some weeks were a hassle, I overall enjoyed the course. Until next time folks!*
 
 [back to main page](https://kennethkietvuong.github.io/cse15l-lab-reports/)
